@@ -1,36 +1,28 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity" >
+    >
+<com.example.telpic.Sketch
+    android:id="@+id/sketch"
+    android:layout_width="match_parent"
+    android:layout_height="600dp"
+  />
 
-	<com.example.telpic.sketchpad
-        android:id="@+id/sketchpad"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent" />
-	
-    <EditText
-        android:id="@+id/name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#006600"
-        android:hint="Enter a saying"
-        android:layout_margin="20dp"
-        android:padding="10dp"
-        >
-
-        <requestFocus />
-    </EditText>
-
-        <Button
-            android:id="@+id/submit"
-            android:background="#006600"
-            android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Enter your phrase!"
-            android:layout_margin="20dp"
+<Button
+    android:id="@+id/clear"
+    android:background="#006600"
+    android:layout_width="200dp"
+    android:layout_height="wrap_content"
+    android:text="Clear"
             
-            />
-
-</RelativeLayout>
+ />
+<Button
+    android:id="@+id/submit"
+    android:background="#006600"
+    android:layout_width="200dp"
+    android:layout_height="wrap_content"
+    android:text="Submit Phrase!"
+            
+ />
+</LinearLayout>

@@ -2,13 +2,11 @@ package com.example.telpic;
 
 
 import java.util.ArrayList;
-
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 //import android.graphics.Paint.FontMetrics;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
@@ -52,52 +50,51 @@ public class Sketch extends View implements OnTouchListener {
         //setFocusable(true);
         //setFocusableInTouchMode(true);
     }
+    
     public Sketch(Context context) {
         super(context);
         init();
     }
+
     public Sketch(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
     }
+
     public Sketch(Context context, 
             AttributeSet ats, 
             int defaultStyle) {
         super(context, ats, defaultStyle);
         init();
     }
-    // ...
 
 
     @Override
     protected void onDraw(Canvas canvas) {
         // Draw the background...
-        Log.d("Mine", "start onDraw .....");
-
         width = getWidth();
         height = getHeight();
         float centerX = width/2;
         float centerY = height/2;
         float radius = Math.min(width, height)/2;
-        float delta =10;
+        float delta = 10;
 
-        Log.d("Mine", "width="+width + " height="+height);
         canvas.drawRect(0, 0, width, height, background);
 
-        canvas.drawCircle(centerX, centerY, radius,  bluePen);
+//        canvas.drawCircle(centerX, centerY, radius,  bluePen);
         float radius2 = radius-delta;
-        canvas.drawCircle(centerX, centerY, radius2,  bluePen);
+//        canvas.drawCircle(centerX, centerY, radius2,  bluePen);
         canvas.drawLine(centerX-radius2, centerY, centerX+radius2 ,centerY , bluePen);
         canvas.drawLine(centerX, centerY-radius2, centerX ,centerY+radius2 , bluePen);
 
-        canvas.drawText("abcdefghijklmnopqrstuvwxyz", centerX,centerY, bluePen);
+//        canvas.drawText("abcdefghijklmnopqrstuvwxyz", centerX,centerY, bluePen);
 
         canvas.save();
-        canvas.rotate(-90, centerX, centerY);
-        canvas.drawText("abcdefghijklmnopqrstuvwxyz", centerX,centerY, bluePen);
+//        canvas.rotate(-90, centerX, centerY);
+//        canvas.drawText("abcdefghijklmnopqrstuvwxyz", centerX,centerY, bluePen);
         canvas.restore();        
 
-        canvas.drawCircle(centerX, centerY, radius,  translucentRedPen);
+//        canvas.drawCircle(centerX, centerY, radius,  translucentRedPen);
         //For Drawing on screen with your finger
         for (int i=1; i < pointList.size(); i++)
         {
@@ -118,7 +115,7 @@ public class Sketch extends View implements OnTouchListener {
         //Finger is down
         case MotionEvent.ACTION_DOWN:            
             type="DOWN ";
-            pointList.clear();
+//            pointList.clear();
             pointList.add(new Data(x,y));
             break;
         case MotionEvent.ACTION_POINTER_DOWN:
@@ -136,7 +133,6 @@ public class Sketch extends View implements OnTouchListener {
             pointList.add(new Data(x,y));              
             break;
         }
-       // Log.d("Mine", type+" X="+x+" Y="+y);
         invalidate();
         return true; // indicate event was handled
     }
