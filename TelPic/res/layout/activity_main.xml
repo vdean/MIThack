@@ -4,13 +4,17 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity" >
 
-
+	<com.example.telpic.sketchpad
+        android:id="@+id/sketchpad"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+	
     <EditText
         android:id="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#006600"
-        android:hint="Enter an event to be added"
+        android:hint="Enter a saying"
         android:layout_margin="20dp"
         android:padding="10dp"
         >
@@ -19,12 +23,12 @@
     </EditText>
 
         <Button
-            android:id="@+id/sumit"
+            android:id="@+id/submit"
             android:background="#006600"
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Create Event!"
+            android:text="Enter your phrase!"
             android:layout_margin="20dp"
             
             />

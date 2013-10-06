@@ -1,5 +1,8 @@
 package com.example.telpic;
 
+import com.example.telpic.Sketch;
+import com.example.telpic.R;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
@@ -10,6 +13,8 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		 Sketch view = (Sketch) findViewById(R.id.sketchpad);
+		 view.setOnTouchListener(view);
 	}
 
 	@Override
