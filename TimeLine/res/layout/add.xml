@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/add"
+    android:orientation="vertical" 
+    >
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#006600"
+        android:hint="Enter an event to be added"
+        android:layout_margin="20dp"
+        android:padding="10dp"
+        >
+
+        <requestFocus />
+    </EditText>
+
+        <DatePicker
+            android:id="@+id/date"
+            android:background="#006600"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:calendarViewShown="false"
+            android:startYear="2013" 
+            android:layout_margin="18dp"
+            android:gravity="center"/>
+
+        <Button
+            android:id="@+id/sumit"
+            android:background="#006600"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Create Event!"
+            android:layout_margin="20dp"
+            
+            />
+   
+</LinearLayout>
