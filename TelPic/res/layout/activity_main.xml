@@ -1,0 +1,32 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#006600"
+        android:hint="Enter an event to be added"
+        android:layout_margin="20dp"
+        android:padding="10dp"
+        >
+
+        <requestFocus />
+    </EditText>
+
+        <Button
+            android:id="@+id/sumit"
+            android:background="#006600"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Create Event!"
+            android:layout_margin="20dp"
+            
+            />
+
+</RelativeLayout>
