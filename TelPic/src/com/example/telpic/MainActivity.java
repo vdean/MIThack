@@ -1,5 +1,9 @@
 package com.example.telpic;
 
+import java.io.ByteArrayOutputStream;
+
+import com.example.telpic.Sketch;
+
 import com.example.telpic.R;
 
 import android.os.Bundle;
@@ -7,6 +11,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.util.Log;
 import android.view.Menu;
+import android.graphics.Bitmap;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,7 +20,21 @@ import android.widget.Toast;
 import android.view.View.OnClickListener;
 
 public class MainActivity extends Activity implements OnClickListener {
+	
+	public void onDrawingResult(){
+		Bitmap screenshot;
+    	findViewById(R.id.sketch).setDrawingCacheEnabled(true);
+    	screenshot = Bitmap.createBitmap(findViewById(R.id.sketch).getDrawingCache());
+    	findViewById(R.id.sketch).setDrawingCacheEnabled(false);
+    	ByteArrayOutputStream bos = new ByteArrayOutputStream();
+    	screenshot.compress(Bitmap.CompressFormat.PNG, 100, bos);
+    	ClientDB.insertDrawing(this, bos.toByteArray(), 1, 1, "Bob");
+	}
 
+	public void onPhraseResult(){
+    	ClientDB.insertPhrase(this, "hi", 1, 1, "Bob");
+	}
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -78,4 +97,4 @@ public class MainActivity extends Activity implements OnClickListener {
 	    }
 
 	}
-	
+
